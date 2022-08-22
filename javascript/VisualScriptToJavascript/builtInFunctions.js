@@ -61,6 +61,25 @@ export const BuilInFunctions = {
         return [(_value !== null), _value];
     }
     `,
+    _toBinary: `function _toBinary(value) {
+        let binaryValues = [];
+        let counter = 0;
+        if(value == 0) return "0";
+        while (value > 0) {
+           binaryValues[counter++] = parseInt(value % 2);
+           value = parseInt(value / 2);
+        }
+        return binaryValues.reverse().join('');
+     }
+     `,
+     _toOctal: `function _toOctal(value){
+        return value.toString(8);
+     }
+     `,
+     _toHex: `function _toHex(value){
+        return value.toString(16);
+     }
+     `
 
 
 }

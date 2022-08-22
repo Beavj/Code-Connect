@@ -397,7 +397,29 @@ export var VSToJS = class {
             case "Random": {
                 expr = `Math.random()`;
             }
+            break;
+            case "RandomInt": {
+                expr = `Math.floor(${this.handleInputs(inputPins[0])} + Math.random() * (${this.handleInputs(inputPins[1])} - ${this.handleInputs(inputPins[0])}))`;
+            }
                 break;
+            case "Converter": {                
+                if (inputNode.srcOutputPinNumber == 0)
+                {
+                    this.builtin_functions = { ...this.builtin_functions, _toBinary: true };
+                    expr = `_toBinary(${this.handleInputs(inputPins[0])})`;
+                }
+                else if (inputNode.srcOutputPinNumber == 1)
+                {
+                    this.builtin_functions = { ...this.builtin_functions, _toOctal: true };
+                    expr = `_toOctal(${this.handleInputs(inputPins[0])})`;
+                }
+                else if (inputNode.srcOutputPinNumber == 2)
+                {
+                    this.builtin_functions = { ...this.builtin_functions, _toHex: true };
+                    expr = `_toHex(${this.handleInputs(inputPins[0])})`;
+                }
+            }
+            break;
             case "Equals": {
                 expr = `(${this.handleInputs(inputPins[0])} === ${this.handleInputs(inputPins[1])})`;
             }
