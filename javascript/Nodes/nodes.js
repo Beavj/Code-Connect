@@ -2212,6 +2212,29 @@ export var Nodes = {
             nodeDescription.rows = 2;
             nodeDescription.colums = 12;
         }
+        if (type == 'DownloadVideo') {
+            nodeDescription.nodeTitle = 'DownloadVideo';
+            nodeDescription.execIn = true;
+            nodeDescription.pinExecInId = null;
+            nodeDescription.execOut = {
+                execOut0: {
+                    execOutTitle: null,
+                    pinExecOutId: null,
+                    outOrder: 0,
+                },
+            };
+            nodeDescription.inputs = {
+                input0: {
+                    inputTitle: 'URL',
+                    dataType: 'String',
+                    defValue: "'link'",
+                    pinInId: null,
+                },
+            }
+            nodeDescription.color = 'Func';
+            nodeDescription.rows = 2;
+            nodeDescription.colums = 12;
+        }
         if (type == 'OpenWindow') {
             nodeDescription.nodeTitle = 'OpenWindow';
             nodeDescription.execIn = true;

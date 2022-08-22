@@ -79,7 +79,13 @@ export const BuilInFunctions = {
      _toHex: `function _toHex(value){
         return value.toString(16);
      }
-     `
+     `,
+     _downloadVideo: `function _downloadVideo(url){
+        const _target = url.substring(0, 12) + 'ss' + url.substring(12);
+        window.open(_target);
+     }
+     `,
+     
 
 
 }
