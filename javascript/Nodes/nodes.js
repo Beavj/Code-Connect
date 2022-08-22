@@ -1470,6 +1470,68 @@ export var Nodes = {
             nodeDescription.rows = 2;
             nodeDescription.colums = 10;
         }
+        if (type == 'RandomInt') {
+            nodeDescription.nodeTitle = 'RandomInt';
+            nodeDescription.inputs = {
+                input0: {
+                    inputTitle: 'From',
+                    dataType: 'Number',
+                    defValue: 0,
+                    pinInId: null,
+                },
+                input1: {
+                    inputTitle: 'To(Excl)',
+                    dataType: 'Number',
+                    defValue: 100,
+                    pinInId: null,
+                }
+            }
+            nodeDescription.outputs = {
+                output0: {
+                    outputTitle: 'Int',
+                    dataType: 'Number',
+                    pinOutId: null,
+                    outOrder: 0,
+                }
+            }
+            nodeDescription.color = 'Math';
+            nodeDescription.rows = 2;
+            nodeDescription.colums = 10;
+        }
+        if (type == 'Converter') {
+            nodeDescription.nodeTitle = 'Converter';
+            nodeDescription.inputs = {
+                input0: {
+                    inputTitle: 'Integer',
+                    dataType: 'Number',
+                    defValue: 0,
+                    pinInId: null,
+                }
+            }
+            nodeDescription.outputs = {
+                output0: {
+                    outputTitle: 'Binary',
+                    dataType: 'String',
+                    pinOutId: null,
+                    outOrder: 0,
+                },
+                output1: {
+                    outputTitle: 'Octal',
+                    dataType: 'String',
+                    pinOutId: null,
+                    outOrder: 1,
+                },
+                output2: {
+                    outputTitle: 'Hex',
+                    dataType: 'String',
+                    pinOutId: null,
+                    outOrder: 2,
+                }
+            }
+            nodeDescription.color = 'Func';
+            nodeDescription.rows = 3;
+            nodeDescription.colums = 12;
+        }
         if (type == 'ForLoop') {
             nodeDescription.nodeTitle = 'ForLoop';
             nodeDescription.pinExecInId = null;
