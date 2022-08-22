@@ -146,14 +146,14 @@ export var VSToJS = class {
             switch (node.customClass.type.typeOfNode) {
                 case "Begin": {
                     this.coreAlgorithm(execOutPins[0]);
-                    let func_string = `/////////CodeWire Functions Space Begins/////////////
+                    let func_string = `/////////Code-Connect Functions Space Begins/////////////
                     
                     `;
                     for (let each_function in this.builtin_functions) {
                         func_string = func_string + BuilInFunctions[each_function];
                     }
                     func_string += `
-                    /////////CodeWire Functions Space Ends/////////////
+                    /////////Code-Connect Functions Space Ends/////////////
                     //\n//\n/////////Generated JS Code Space Begins/////////////
                     `;
                     this.script = func_string + this.script;
